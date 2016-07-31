@@ -72,3 +72,5 @@ autocmd VimEnter * wincmd p
  " Resize Vertically -5
  nnoremap <Leader>v :vertical resize -5<CR>
 
+ " Change comments color
+ :color desert
