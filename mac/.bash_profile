@@ -40,3 +40,4 @@ mkcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and j
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
+alias adb='~/Library/Android/sdk/platform-tools/adb'     #adb:           Android adb debug tool
