@@ -6,8 +6,25 @@
 #   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 #   ------------------------------------------------------------
 export CLICOLOR=1
+
+# ----light
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export EDITOR=/usr/bin/vim
+
+# ---dark
+#export LSCOLORS=ExFxBxDxCxegedabagacad
+
+#   Set Paths
+#   ------------------------------------------------------------
+    export PATH="$PATH:/usr/local/bin/"
+
+#   Set default blocksize for ls, df, du
+#   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
+#   ------------------------------------------------------------
+    export BLOCKSIZE=1k
+
+#   Change Prompt
+#   ------------------------------------------------------------
+    export PS1="\w @ \h(\u): "
 
 #   -----------------------------
 #   2.  MAKE TERMINAL BETTER
@@ -16,7 +33,7 @@ export EDITOR=/usr/bin/vim
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-#alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias ll='ls'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
@@ -40,4 +57,14 @@ mkcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and j
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
-alias adb='~/Library/Android/sdk/platform-tools/adb'     #adb:           Android adb debug tool
+alias adb='~/Library/Android/sdk/platform-tools/adb'     #adb:           Android adb debug too  colored prompt, if the terminal has the capability; turned
+
+#   ---------------------------------------
+#   7.  SYSTEMS OPERATIONS & INFORMATION
+#   ---------------------------------------
+ 
+alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
+ 
+#   cleanupDS:  Recursively delete .DS_Store files
+#   -------------------------------------------------------------------
+    alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
