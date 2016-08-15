@@ -106,18 +106,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#export http_proxy=http://proxy.seld.sonyericsson.net:8080
-#export https_proxy=http://proxy.seld.sonyericsson.net:8080
-export http_proxy=http://proxy.global.sonyericsson.net:8080/
-export ANDROID_HOME=~/sdk/android-sdk/sdk
-export ANDROID_NDK=~/sdk/android-ndk-r9
 
 PATH=$PATH:/usr/local/lib
 PATH=$PATH:/usr/local/include
 PATH=$ANDROID_HOME/tools:$PATH
 PATH=$ANDROID_HOME/platform-tools:$PATH
 PATH=$ANDROID_NDK:$PATH
-PATH=$PATH:/home/CORPUSERS/23060814/source/tools
 
 alias mkcd='. mkcd.sh'
 alias dms='. dms.sh'
