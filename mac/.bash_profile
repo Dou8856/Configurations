@@ -25,7 +25,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #   Change Prompt
 #   ------------------------------------------------------------
     #export PS1="\h(\u) \w : "
-    export PS1="\e[0;32m\u \e[0;93m\w:\e[m"
+    export PS1="\e[0;32m\u \e[0;93m\w:\e[m\n"
 
 #   -----------------------------
 #   2.  MAKE TERMINAL BETTER
